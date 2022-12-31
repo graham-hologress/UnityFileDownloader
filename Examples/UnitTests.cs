@@ -30,7 +30,7 @@ public class UnitTests : MonoBehaviour
         ufd.OnDownloadSuccess += (string uri) => {
             Debug.Log("Downloaded " + uri + "! Total progress is " + ufd.Progress + "%");
             IDownloadFulfiller idf = ufd.GetFulfiller(uri);
-            Debug.Log("This download was " + (ufd.MultipartDownload ? "" : "NOT ") + "downloaded in multiparts.");
+            Debug.Log("This download was " + (idf.MultipartDownload ? "" : "NOT ") + "downloaded in multiparts.");
 
             if (true) { // dummy
                 ufd.Cancel();
